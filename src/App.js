@@ -52,6 +52,43 @@ export default class HelloWorldComponent extends React.Component {
             )
           }
         }
+
+        class MyNumberComponent extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = { myNumber: 997 };
+          }
+        
+          myClick() {
+            if(this.state.myNumber > 0
+           ){
+            this.setState({ myNumber: this.state.myNumber - 100 })}
+          }
+          myClickOne() {
+            this.setState({ myNumber: this.state.myNumber + 100 });
+          }
+          myClickReset() {
+            this.setState({ myNumber: this.state.myNumber = 0 });
+          }
+        
+          render() {
+            console.log("render!");
+            return (
+              <div>
+                <button onClick={this.myClick.bind(this)}>Minus 100 !</button>
+                <button onClick={this.myClickOne.bind(this)}>Plus 100 !</button>
+                <button onClick={this.myClickReset.bind(this)}>Reset</button>
+               
+                <p>My current number: {this.state.myNumber}</p>
+              </div>
+            );
+          }
+        }
+
+
+
+
+
 export default class App extends React.Component {
   render() {
     const cars = ["Audi", "BMW", "Skoda", 'Mercedes']
@@ -64,7 +101,11 @@ export default class App extends React.Component {
        {cars.map((car) => <li key={car}>{car}</li>)}
           </ol>
         <HelloWorldComponent/>
-        <HelloWorldComponent/>
+        <HelloWorldComponent/><hr/>
+        <MyNumberComponent />
+        <hr/>
+
+
         <MyButton button='Click me !' alert='Brawo !' />
        
         <MyButton button='Kliknij mnie !' alert='Świetnie !' />
