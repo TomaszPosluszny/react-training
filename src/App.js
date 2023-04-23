@@ -54,11 +54,21 @@ export default class HelloWorldComponent extends React.Component {
         }
 export default class App extends React.Component {
   render() {
+    const cars = ["Audi", "BMW", "Skoda", 'Mercedes']
     return (
+
+      
       <div>
+
+        <ol>
+       {cars.map((car) => <li key={car}>{car}</li>)}
+          </ol>
         <HelloWorldComponent/>
         <HelloWorldComponent/>
         <MyButton button='Click me !' alert='Brawo !' />
+       
+        <MyButton button='Kliknij mnie !' alert='Świetnie !' />
+        <MyButton/>
        
       <hr />
 <GreetingsComponent/>
