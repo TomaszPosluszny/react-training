@@ -15,13 +15,13 @@ export default class HelloWorldComponent extends React.Component {
     }
     export default class GreetNameComponent extends React.Component {
       render() {
-        return ( <><h3>Hello {this.props.nameOne}</h3>
+        return ( 
+        <>
+        <h3>Hello {this.props.nameOne}</h3>
           <h3>Hello {this.props.nameTwo}</h3>
           <h3>Hello {this.props.nameThree}</h3>
           <h3>Hello {this.props.nameFour}</h3>
-          
           </>
-  
           )
         }
       }
@@ -44,18 +44,29 @@ export default class HelloWorldComponent extends React.Component {
           )
         }
       }
+      export default class MyButton extends React.Component {
+        handleClick = () => {alert(this.props.alert)}
+        render() {
+          return (
+        <button onClick={this.handleClick}>{this.props.button}</button>
+            )
+          }
+        }
 export default class App extends React.Component {
   render() {
     return (
       <div>
         <HelloWorldComponent/>
         <HelloWorldComponent/>
+        <MyButton button='Click me !' alert='Brawo !' />
        
+      <hr />
+<GreetingsComponent/>
 
         <hr />
-<GreetingsComponent/>
-        <hr />
         <GreetNameComponent nameOne='Tomek' nameTwo='Ania' nameThree='Robert' nameFour='Patryk'/>
+
+        <hr />
         <GreetNameComponentTwo name='Tomek' />
         <GreetNameComponentTwo name='Ania' />
         <GreetNameComponentTwo name='Robert' />
