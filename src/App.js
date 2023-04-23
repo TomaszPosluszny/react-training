@@ -85,7 +85,27 @@ export default class HelloWorldComponent extends React.Component {
           }
         }
 
+        export default class Counter extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = { myNumber: 0, step:1 };
+          }
+        
+          increment =()=>{this.setState({myNumber:this.state.myNumber + this.state.step})}
 
+          inputChangeHandler =(e) =>{
+const inputNumber = +e.target.value;
+this.setState({step: inputNumber})
+
+          }
+          render(){
+            return(<div>
+              <span>{this.state.myNumber}
+              </span>
+              <input onChange={this.inputChangeHandler} value={this.state.step}/>
+              <button onClick={this.increment}>+</button></div>)
+              }
+            }
 
 
 
@@ -103,6 +123,9 @@ export default class App extends React.Component {
         <HelloWorldComponent/>
         <HelloWorldComponent/><hr/>
         <MyNumberComponent />
+        <MyNumberComponent />
+        <hr/>
+<Counter/>
         <hr/>
 
 
