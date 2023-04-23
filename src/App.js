@@ -13,6 +13,27 @@ export default class HelloWorldComponent extends React.Component {
         )
       }
     }
+    export default class GreetNameComponent extends React.Component {
+      render() {
+        return ( <><h3>Hello {this.props.nameOne}</h3>
+          <h3>Hello {this.props.nameTwo}</h3>
+          <h3>Hello {this.props.nameThree}</h3>
+          <h3>Hello {this.props.nameFour}</h3>
+          
+          </>
+  
+          )
+        }
+      }
+      export default class GreetNameComponentTwo extends React.Component {
+        render() {
+          return ( 
+            <h3>Hello {this.props.name} !</h3>
+            
+    
+            )
+          }
+        }
     export default class GreetingsComponent extends React.Component {
       render() {
         return (
@@ -32,15 +53,14 @@ export default class App extends React.Component {
        
 
         <hr />
-
 <GreetingsComponent/>
         <hr />
-
-        <h3>Hello Wiktor!</h3>
-        <h3>Hello Robert!</h3>
-        <h3>Hello Magda!</h3>
-        <h3>Hello Joanna!</h3>
-
+        <GreetNameComponent nameOne='Tomek' nameTwo='Ania' nameThree='Robert' nameFour='Patryk'/>
+        <GreetNameComponentTwo name='Tomek' />
+        <GreetNameComponentTwo name='Ania' />
+        <GreetNameComponentTwo name='Robert' />
+        <GreetNameComponentTwo name='Patryk' />
+        
         <hr />
 
         <MyTextComponent/>
